@@ -1,0 +1,12 @@
+BasedOnStyle: LLVM
+AccessModifierOffset: -4
+AlignAfterOpenBracket: BlockIndent
+AllowShortFunctionsOnASingleLine: Inline
+BinPackArguments: false
+BinPackParameters: false
+BreakTemplateDeclarations: Leave
+ColumnLimit: 120
+IndentWidth: 4
+InsertNewlineAtEOF: true
+PointerAlignment: Left
+TabWidth: 4
