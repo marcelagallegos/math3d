@@ -16,6 +16,8 @@ template <typename T, int N, bool Aligned = false>
     requires(math3d::detail::scalar<T> && N >= 2 && N <= 4)
 struct tvec : public detail::tvec_storage<T, N, Aligned> {
 
+    using value_type = T;
+
     constexpr tvec() noexcept = default;
 
     explicit constexpr tvec(T s) noexcept : detail::tvec_storage<T, N, Aligned>{} {
@@ -29,6 +31,8 @@ struct tvec : public detail::tvec_storage<T, N, Aligned> {
     constexpr tvec(Args... args) noexcept : detail::tvec_storage<T, N, Aligned>{{static_cast<T>(args)...}} {}
 
     // TODO: conversion constructors
+
+    [[nodiscard]] static constexpr int size() noexcept { return N; }
 
     [[nodiscard]] constexpr T& operator[](int i) noexcept {
         assert(i >= 0 && i < N && "tvec index out of bounds");
