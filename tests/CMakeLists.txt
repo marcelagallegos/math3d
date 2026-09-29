@@ -8,7 +8,11 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(tests vec.test.cpp)
+add_executable(
+    tests
+    relational.test.cpp
+    vec.test.cpp
+)
 target_link_libraries(tests PRIVATE math3d::math3d Catch2::Catch2WithMain)
 
 list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
